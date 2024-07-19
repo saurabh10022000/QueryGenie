@@ -3,7 +3,7 @@ import cors from 'cors';
 import generate from './api.js';
 const app=express();
 app.use(express.json());
-app.use(cors({origin:"*"}));
+app.use(cors({origin:"query-genie-front.vercel.app"}));
 const PORT=process.env.PORT||3007;
 app.get('/',(req,res)=>{
     res.send("hello world");
