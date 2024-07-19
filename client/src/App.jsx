@@ -12,7 +12,7 @@ function App() {
   }
   
   const generateQuery=async()=>{
-    const response=await fetch("https://query-genie.vercel.app/generate",{
+    const response=await fetch("query-genie-api.vercel.app/generate",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
