@@ -3,30 +3,14 @@
     "builds": [
       {
         "src": "package.json",
-        "use": "@vercel/static-build",
+        "use": "@vercel/node",
         "config": {
-          "distDir": "build"
+          "includeFiles": ["build_db.js"]
         }
       }
     ],
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0, no-cache, no-store, must-revalidate"
-          }
-        ]
-      }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+    "env": {
+      "DATABASE_URL": "sqlite://./database.sqlite"
+    }
   }
   
